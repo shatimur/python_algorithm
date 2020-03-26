@@ -16,15 +16,12 @@ array = [random.randint(min_, max_) for i in range(size)]
 print(array)
 
 def bubble(lst):
-    # n = 1
-    while True: #n < len(array):
+    while True:
         for i in range(len(lst) - 1):
-            if lst[i] > lst[i + 1]:
+            if lst[i] < lst[i + 1]:
                 lst[i], lst[i + 1] = lst[i + 1], lst[i]
-        # n += 1
-        if all (lst[i] <= lst[i + 1] for i in range(len(lst)-1)):
+        if all (lst[i] >= lst[i + 1] for i in range(len(lst)-1)):
             break
     return lst
 
-res = [*bubble(array).__reversed__()]
-print(res)
+print(bubble(array))
